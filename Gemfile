@@ -21,6 +21,8 @@ gem "octokit", "~> 4.0"
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'active_attr'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'byebug'

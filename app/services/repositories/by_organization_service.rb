@@ -5,7 +5,7 @@ class Repositories::ByOrganizationService < Repositories::BaseService
   end
 
   def perform
-    @result = @client.org_repos(@organization_name)
+    @result = Externals::RepositoryContainer.new(@client.org_repos(@organization_name))
 
     self
   end
