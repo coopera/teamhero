@@ -17,8 +17,11 @@ gem 'jbuilder', '~> 2.0'
 #Authentication
 gem 'omniauth'
 gem 'omniauth-github'
+gem "octokit", "~> 4.0"
 
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'active_attr'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -28,4 +31,5 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'pry-rails'
 end
