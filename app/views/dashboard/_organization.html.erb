@@ -1,0 +1,8 @@
+<%= link_to '', class: 'col-md-3 btn btn-default organization' do %>
+  <div class="row">
+    <div class="th-badge col-md-4">
+      <%= image_tag organization.avatar_url, class: 'img-circle', width: '75px', height: '75px' %>
+    </div>
+    <p class="col-md-8"><%= organization.login %></p>
+  </div>
+<% end %>
