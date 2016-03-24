@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="well col-md-8">
+      <h2>Badges</h2>
+      <div class="th-badge">
+        <%= image_tag image_path('badges/teamhero.png'), width: '75px', height: '75px' %>
+      </div>
+    </div>
+  </div>
+  <%= render partial: 'project', collection: @projects %>
+</div>

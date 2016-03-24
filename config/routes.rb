@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  resources :organizations, only: [:index, :show]
 end
