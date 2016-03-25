@@ -23,13 +23,15 @@
     <div class="col-md-8">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <div class="panel-title">Badges</div>
+          <div class="panel-title">Organizações</div>
         </div>
 
         <div class="panel-body">
-          <div class="th-badge">
-            <%= image_tag image_path('badges/teamhero.png'), width: '75px', height: '75px' %>
-          </div>
+          <% @organization_groups.each do |group| %>
+            <div class="row">
+              <%= render partial: 'organization', collection: group%>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
