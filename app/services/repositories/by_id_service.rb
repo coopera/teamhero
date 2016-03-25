@@ -1,11 +1,11 @@
 class Repositories::ByIDService < Repositories::BaseService
-  def initialize(user, organization_name, project_name)
-    @user, @organization_name, @project_name = user, organization_name, project_name
+  def initialize(user, organization_name, project_id)
+    @user, @organization_name, @project_id = user, organization_name, project_id
     super(@user)
   end
 
   def perform
-    @result = Externals::RepositoryContainer.new(@client.org_repos(@organization_name)).find_by(name: @project_name)
+    @result = Externals::RepositoryContainer.new(@client.org_repos(@organization_name)).find_by(id: @project_id)
 
     self
   end
