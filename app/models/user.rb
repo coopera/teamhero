@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :badges
+  
   def self.create_from_omniauth(auth_hash)
     self.create(provider: auth_hash[:provider],
                 uid: auth_hash[:uid],
