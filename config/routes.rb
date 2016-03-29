@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'dashboard#index'
 
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new',  as: 'login'
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
