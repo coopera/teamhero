@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/Codeminer42/miner_deployer.git
+  revision: 2016f5b9fa22581b8957e37df797f7dd94da5236
+  specs:
+    miner_deployer (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -111,6 +117,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -195,9 +202,11 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
+  miner_deployer!
   octokit (~> 4.0)
   omniauth
   omniauth-github
+  pg
   pry-rails
   rails (= 4.2.5.2)
   sass-rails (~> 5.0)

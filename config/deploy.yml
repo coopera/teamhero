@@ -1,0 +1,16 @@
+staging:
+  app: teamhero-staging
+  url: http://teamhero-staging.herokuapp.com/
+  branch: HEAD
+  remote: git@heroku.com
+  check:
+    selector: 'h1'
+    text: 'Sign in to GitHub'
+production:
+  app: teamhero
+  url: http://teamhero.herokuapp.com/
+  branch: HEAD
+  remote: git@heroku.com
+  check:
+    selector: 'h1'
+    text: 'Sign in to GitHub'
