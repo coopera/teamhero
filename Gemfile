@@ -27,6 +27,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'dotenv-rails'
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
