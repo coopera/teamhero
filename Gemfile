@@ -21,7 +21,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'active_attr'
 
+gem 'httparty'
+
 gem 'pg', group: :production
+
+gem 'webmock', group: :test
 
 group :development, :test do
   gem 'sqlite3'
