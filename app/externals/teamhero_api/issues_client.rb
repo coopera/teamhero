@@ -1,7 +1,11 @@
 module TeamheroAPI
   class IssuesClient < BaseClient
-    def self.count(username, repository)
-      get_events_count(:issues, username, repository)
+    def self.count(username)
+      issue_count(username, nil, nil)
+    end
+
+    def self.current_week_count(username)
+      current_week_issue_count(username)
     end
   end
 end
