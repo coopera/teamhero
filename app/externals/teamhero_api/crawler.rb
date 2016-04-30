@@ -5,10 +5,12 @@ module TeamheroAPI
         users.each do |user|
           pr_points = pull_request_count(user.nickname)
           issue_points = issue_count(user.nickname)
-          teamhero_points = (pr_points * 4) + (issue_points * 2)
+          comment_points = comment_count(user.nickname)
+          teamhero_points = (pr_points * 4) + (issue_points * 2) + comment_points
 
           pull_request_score(user).update_attributes(points: pr_points)
           issue_score(user).update_attributes(points: issue_points)
+          comment_score(user).update_attributes(points: comment_points)
           teamhero_score(user).update_attributes(points: teamhero_points)
         end
       end
@@ -35,6 +37,14 @@ module TeamheroAPI
         TeamheroAPI::IssuesClient.count(username)
       end
 
+      def current_week_comment_count(username)
+        TeamheroAPI::CommentsClient.current_week_count(username)
+      end
+
+      def comment_count(username)
+        TeamheroAPI::CommentsClient.count(username)
+      end
+
       def teamhero_score(user)
         find_or_create_score(user.id, Score.score_types[:general], Score.badge_types[:teamhero])
       end
@@ -45,6 +55,10 @@ module TeamheroAPI
 
       def issue_score(user)
         find_or_create_score(user.id, Score.score_types[:general], Score.badge_types[:issue])
+      end
+
+      def comment_score(user)
+        find_or_create_score(user.id, Score.score_types[:general], Score.badge_types[:comment])
       end
 
       def find_or_create_score(user_id, score_type, badge_type)
