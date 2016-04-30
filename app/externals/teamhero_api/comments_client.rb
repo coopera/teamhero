@@ -1,7 +1,7 @@
 module TeamheroAPI
   class CommentsClient < BaseClient
     def self.count(username)
-      comment_count(username, nil, nil)
+      pull_request_comment_count(username) + issue_comment_count(username)
     end
 
     def self.current_week_count(username)

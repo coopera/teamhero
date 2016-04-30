@@ -1,7 +1,7 @@
 module TeamheroAPI
   class IssuesClient < BaseClient
     def self.count(username)
-      issue_count(username, nil, nil)
+      issue_count(username)
     end
 
     def self.current_week_count(username)
