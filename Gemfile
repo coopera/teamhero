@@ -23,6 +23,9 @@ gem 'active_attr'
 
 gem 'httparty'
 
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
+
 gem 'pg', group: :production
 
 gem 'webmock', group: :test
