@@ -23,7 +23,8 @@ gem 'active_attr'
 
 gem 'httparty'
 
-gem 'pg', group: :production
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
 
 gem 'webmock', group: :test
 
@@ -38,4 +39,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'pry-rails'
   gem 'miner_deployer', github: 'Codeminer42/miner_deployer'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
